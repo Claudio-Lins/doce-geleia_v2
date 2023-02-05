@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 
 interface HeroProps {
-  bg: "bg-hero" | "bg-contact" | "bg-heroMb" | "bg-hero-mb";
+  bg: "bg-hero" | "bg-contact";
   opacity?: string;
   children?: ReactNode;
 }
@@ -13,7 +13,7 @@ export function Hero({ bg = "bg-hero", opacity, children }: HeroProps) {
     <div
       data-cz-shortcut-listen="true"
       className={`
-    relative mb-12 flex flex-col h-screen w-full items-center justify-center bg-fixed bg-no-repeat bg-cover bg-center
+    relative mb-12 flex flex-col h-screen w-full items-center justify-center md:bg-fixed bg-no-repeat bg-cover bg-center md:scroll-mt-32
     ${bg}
     `}
     >

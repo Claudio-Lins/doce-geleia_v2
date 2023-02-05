@@ -7,9 +7,7 @@ html {
   font-family: 'Montserrat', sans-serif;
 }
 
-.bg-hero-mb {
-  background-image: url('../../public/slideImgs/img01-mb.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
+  /* @media (min-width: 320px) { 
+    body { line-height: 2.5rem }
+   } */
