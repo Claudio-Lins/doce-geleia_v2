@@ -5,7 +5,7 @@ export function HeroText() {
         <h2 className="font-Old text-5xl font-bold">Doce Geleia</h2>
         <hr />
         <p
-          className="max-w-sm py-5 font-Montserrat font-light text-xs iPhone5:leading-relaxed iPhoneX:leading-relaxed iPhoneXR:text-base"
+          className="max-w-sm py-5 font-Montserrat font-light text-xs iPhone5:leading-relaxed iPhoneX:leading-relaxed iPhoneXR:text-base  sm:text-[14px] sm:my-10"
         >
           A geleia artesanal é um produto delicioso e saudável, feito à base de
           frutas frescas e sem adição de conservantes. É uma otima opção para
@@ -24,7 +24,7 @@ export function HeroText() {
           produto de qualidade e sabor único. Acreditamos que a alimentação
           saudável e natural é essencial para uma vida mais feliz e saudável.
         </p>
-        <a href="/#sabores" className="border px-8 py-2 transition-all duration-700 hover:bg-zinc-50 hover:text-zinc-900">
+        <a href="/#sabores" className="border px-8 py-2 transition-all duration-700 hover:bg-zinc-50 hover:text-zinc-900 ">
           Sabores
         </a>
       </div>
