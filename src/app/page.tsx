@@ -7,11 +7,11 @@ export default async function Home() {
   
   return (
     <div id="home">
-      <Hero bg="bg-hero" opacity="bg-black/50">
+      <Hero bg="bg-hero-mb" opacity="bg-black/50">
         <HeroText/>
       </Hero>
       <Flavor/>
-      <Hero bg="bg-contact" opacity="bg-black/50">
+      <Hero bg="bg-contact" >
         <HeroContact/>
       </Hero>
     </div>

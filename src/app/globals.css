@@ -4,7 +4,12 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
 }
-.custom-image {
-  background-image: url('/slideImgs/img01.jpeg');
+
+.bg-hero-mb {
+  background-image: url('../../public/slideImgs/img01-mb.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

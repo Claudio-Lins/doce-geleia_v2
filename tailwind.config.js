@@ -12,10 +12,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero': "url('/slideImgs/img01.jpeg')",
+        'heroMb': "url('/slideImgs/img01-mb.jpeg')",
         'contact': "url('/contact.jpeg')",
       },
       fontFamily: {
-        Montserrat: 'Montserrat, sans',
+        Montserrat: 'Montserrat, sans-serif',
         Old: 'Old Standard TT, sans-serif',
       },
       scale: {

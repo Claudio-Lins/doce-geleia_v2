@@ -3,17 +3,17 @@
 import { ReactNode } from "react";
 
 interface HeroProps {
-  bg: 'bg-hero' | 'bg-contact';
+  bg: "bg-hero" | "bg-contact" | "bg-heroMb" | "bg-hero-mb";
   opacity?: string;
-  children?: ReactNode
+  children?: ReactNode;
 }
 
-export function Hero({ bg = 'bg-hero', opacity, children }: HeroProps) {
+export function Hero({ bg = "bg-hero", opacity, children }: HeroProps) {
   return (
     <div
-    data-cz-shortcut-listen="true"
+      data-cz-shortcut-listen="true"
       className={`
-    relative mb-12 flex h-screen w-full items-center justify-center bg-cover bg-fixed bg-center
+    relative mb-12 flex flex-col h-screen w-full items-center justify-center bg-fixed bg-no-repeat bg-cover bg-center
     ${bg}
     `}
     >

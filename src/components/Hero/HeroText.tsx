@@ -1,7 +1,7 @@
 "use client";
 export function HeroText() {
   return (
-    <div className="z-[2] mt-12 p-5 text-white md:-ml-72 md:-mt-10">
+    <div className="z-[2] p-5 text-white md:-ml-72 md:-mt-10 backdrop-blur-sm h-auto">
         <h2 className="font-Old text-5xl font-bold">Doce Geleia</h2>
         <hr />
         <p
