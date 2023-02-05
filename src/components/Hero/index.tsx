@@ -11,6 +11,7 @@ interface HeroProps {
 export function Hero({ bg = 'bg-hero', opacity, children }: HeroProps) {
   return (
     <div
+    data-cz-shortcut-listen="true"
       className={`
     relative mb-12 flex h-screen w-full items-center justify-center bg-cover bg-fixed bg-center
     ${bg}
