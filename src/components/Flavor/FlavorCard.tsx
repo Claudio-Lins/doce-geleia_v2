@@ -5,11 +5,13 @@ interface ImageProps {
   src: any
   alt: string;
   title?: string;
-  weight?: string;
+  details?: any;
+  price?: number
   products?: [];
+  productDetails?: [];
 }
 
-export function FlavorCard({ src, alt, title, products, weight }: ImageProps) {
+export function FlavorCard({ src, alt, title, products, details, productDetails, price }: ImageProps) {
   return (
     <div className="relative flex h-[205px] w-[170px] flex-col justify-between overflow-hidden rounded-2xl border shadow-md group cursor-pointer">
       <div className="relative flex h-[205px] w-[170px] ">
@@ -25,9 +27,12 @@ export function FlavorCard({ src, alt, title, products, weight }: ImageProps) {
         />
       </div>
       <div className="absolute bottom-0 flex h-[45px] w-full flex-col items-center justify-center bg-zinc-900/50 group-hover:h-full duration-300 transition-all">
-        <div className="w-full h-[160px] hidden group-hover:block text-white p-2">
+        <div className="w-full h-[160px] hidden group-hover:block text-white">
           <div className=" flex flex-col justify-center items-center">
-          Desde de: <span className="font-bold text-2xl">2,50€</span>
+          <div className="flex justify-center items-center gap-2">
+            <span>{details}</span>
+          </div>
+          
           </div>
         </div>
       </div>
