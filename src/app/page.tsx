@@ -17,15 +17,9 @@ export default async function Home() {
       <Hero bg="bg-contact" opacity="bg-black/60" >
         <HeroContact/>
       </Hero>
+      {/* <pre>
+        {JSON.stringify(productDetails, null, 2)}
+      </pre> */}
     </div>
   );
 }
-
-// async function getInstagramPosts() {
-//   const res = await fetch(
-//     "https://docegeleia-6xix4sbb6-claudio-lins.vercel.app/api/hero/getAllHeroproducts"
-//   );
-//   const data = await res.json();
-
-//   return data;
-// }

@@ -1,3 +1,5 @@
+import { ProductDetailsProps } from "@/@types/ProductDetailsProps";
+import { ProductProps } from "@/@types/ProductProps";
 import { FlavorCard } from "./FlavorCard";
 
 interface FlavorProps {
@@ -11,14 +13,16 @@ export function Flavor({products, productDetails}: FlavorProps) {
       <h2 className='font-Montserrat font-bold text-3xl mb-2'>Sabores</h2>
       <hr className="w-full mb-8" />
       <div className='flex flex-wrap justify-evenly md:justify-center md:gap-20 gap-4 items-center w-full h-auto md:h-[80%]'>
-        {products.map((product: any) => {
+        {products.map((product: ProductProps) => {
         return (
           <div key={product.id}>
             <FlavorCard
               title={product.title}
               src={product.coverUrl}
               alt={product.title}
-              details={productDetails?.map((productDetail: any) => {
+              details={productDetails
+              .filter((productDetail: ProductDetailsProps) => productDetail.productId === product.id)
+                .map((productDetail: ProductDetailsProps) => {
                 return (
                   <div key={productDetail.id}>
                     <div className="flex text-[8px]">
