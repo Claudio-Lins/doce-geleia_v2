@@ -14,7 +14,7 @@ model Product {
   id          Int     @id @default(autoincrement())
   title       String
   slug        String? @unique
-  description String?
+  ingredients String?
   coverUrl    String?
 
   ProductDetail ProductDetail[]
