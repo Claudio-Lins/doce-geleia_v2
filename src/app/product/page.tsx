@@ -4,8 +4,7 @@ import { ProductDetail, ProductProps } from '@/@types/ProductProps'
 
 
 export default async function Product() {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_STRIPE_URL}products?populate=*`)
+  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
   const products = await response.json()
 
   return (
