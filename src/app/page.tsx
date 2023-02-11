@@ -5,7 +5,11 @@ import { HeroContact } from "@/components/Hero/HeroContact";
 import { HeroText } from "@/components/Hero/HeroText";
 export default async function Home() {
 
-  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
+  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*', {
+    next: {
+      revalidate: 10
+    }
+  })
   const products = await response.json()
   return (
     <div id="home">

@@ -2,7 +2,6 @@
 import { ProductDetailsProps } from '@/@types/ProductDetailsProps'
 import { ProductProps } from '@/@types/ProductProps'
 import Link from 'next/link'
-import { useState } from 'react'
 import { FlavorCard } from './FlavorCard'
 
 

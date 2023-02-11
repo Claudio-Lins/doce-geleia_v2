@@ -4,7 +4,11 @@ import { ProductDetail, ProductProps } from '@/@types/ProductProps'
 
 
 export default async function Product() {
-  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
+  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*', {
+    next: {
+      revalidate: 10
+    }
+  })
   const products = await response.json()
 
   return (
