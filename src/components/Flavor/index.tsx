@@ -8,10 +8,7 @@ import { FlavorCard } from './FlavorCard'
 
 export async function Flavor() {
 
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_STRIPE_URL}products?populate=*`, {
-      cache: 'no-cache'
-    })
+  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
   const products = await response.json()
 
   // const [isOpen, setIsOpen] = useState(false)
