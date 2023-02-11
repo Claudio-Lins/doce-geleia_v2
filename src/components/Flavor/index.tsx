@@ -6,15 +6,8 @@ import { useState } from 'react'
 import { FlavorCard } from './FlavorCard'
 
 
-export async function Flavor() {
+export function Flavor({products}: any ) {
 
-  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
-  const products = await response.json()
-
-  // const [isOpen, setIsOpen] = useState(false)
-  // function handleOpenProduct(id: number) {
-  //   setIsOpen(!isOpen)
-  // }
 
   return (
     <div
@@ -24,7 +17,7 @@ export async function Flavor() {
       <h2 className='mb-2 font-Montserrat text-3xl font-bold'>Sabores</h2>
       <hr className='mb-8 w-full' />
       <div className='flex h-auto w-full flex-wrap items-center justify-evenly gap-4 md:h-[80%] md:justify-center md:gap-20'>
-        {products.data.map((product: ProductProps) => {
+        {products?.data.map((product: ProductProps) => {
           return (
             <div 
               key={product.id}>

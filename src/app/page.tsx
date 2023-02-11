@@ -3,14 +3,16 @@ import { Flavor } from "@/components/Flavor";
 import { Hero } from "@/components/Hero";
 import { HeroContact } from "@/components/Hero/HeroContact";
 import { HeroText } from "@/components/Hero/HeroText";
-export default function Home() {
+export default async function Home() {
+
+  const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*')
+  const products = await response.json()
   return (
     <div id="home">
       <Hero bg="bg-hero" opacity="bg-black/70">
         <HeroText/>
       </Hero>
-      {/* @ts-ignore */}
-      <Flavor/>
+      <Flavor products={products}/>
       <Hero bg="bg-contact" opacity="bg-black/60" >
         <HeroContact/>
       </Hero>
