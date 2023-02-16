@@ -6,13 +6,17 @@ async function getProduct(id: any) {
   return res.json();
 }
 
-export default function Product({ params }: any) {
+export default function Product({ params }: {
+  params: {
+    id: string
+  }
+}) {
   const { id } = params;
   const product = use(getProduct(id));
   return (
     <div>
-      <h1>Product: {params?.slug}</h1>
-      <h1>Título {product?.title}</h1>
+      <h1>Product: {params?.id}</h1>
+      <h1>Título: {product?.title}</h1>
       <pre>
         {JSON.stringify(product.data, null, 2)}
       </pre>
