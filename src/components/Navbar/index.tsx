@@ -4,11 +4,13 @@ import Link from "next/link";
 import { List, X } from "phosphor-react";
 import { useEffect, useState } from "react";
 
+
 export function Navbar() {
   const [nav, setNav] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
   const [lgNeg, setLgNeg] = useState(false);
+
 
   useEffect(() => {
     const changeColor = () => {
@@ -43,6 +45,7 @@ export function Navbar() {
             alt="Doce Geleia logo"
             width={65}
             height={56}
+            priority
             className={`border-[1px] border-${textColor} p-1`}
           />
         </Link>

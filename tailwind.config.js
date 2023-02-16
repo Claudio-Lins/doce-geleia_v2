@@ -36,7 +36,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        hero: "url('/slideImgs/img01.jpeg')",
+        hero: "url('/img01.jpeg')",
         contact: "url('/contact.jpeg')",
       },
       fontFamily: {

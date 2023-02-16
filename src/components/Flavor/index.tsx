@@ -16,17 +16,18 @@ export function Flavor({products}: any ) {
       <h2 className='mb-2 font-Montserrat text-3xl font-bold'>Sabores</h2>
       <hr className='mb-8 w-full' />
       <div className='flex h-auto w-full flex-wrap items-center justify-evenly gap-4 md:h-[80%] md:justify-center md:gap-20'>
-        {products?.data.map((product: ProductProps) => {
+        {products?.map((product: ProductProps) => {
           return (
             <div 
               key={product.id}>
-                <Link href={`/product/${product.attributes.slug}`} >
-              <FlavorCard
+                <Link href={`/product/${product.id}`} >
+                  link
+              {/* <FlavorCard
                 title={product.attributes.title}
                 src={product.attributes.cover.data.attributes.url}
                 alt={product.attributes.title}
                 ingredients={product.attributes.ingredients}
-              />
+              /> */}
               </Link>
             </div>
           )

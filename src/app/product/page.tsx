@@ -1,19 +1,29 @@
+// "use client"
 import Image from 'next/image'
 import { ProductDetail, ProductProps } from '@/@types/ProductProps'
-
-
+import { Likes } from '@/components/Product/Likes'
 
 export default async function Product() {
   const response = await fetch('https://api-strapi-9nk4.onrender.com/api/products?populate=*', {
     next: {
       revalidate: 10
     }
-  })
-  const products = await response.json()
+  }).then(
+    (response) => {
+      if (response.ok) {
+        return response.json()
+      }
+      throw new Error('Não foi possível carregar os dados')
+    }
+  )
+  const products = await response
+
+    
 
   return (
     <div className='flex justify-center gap-2'>
-      {products.data?.map((product: ProductProps) => {
+      {products && products?.data
+      .map((product: any) => {
         return (
           <div
             className='w-full mt-40 flex flex-col items-center justify-center rounded-md border p-2 max-w-xs'
@@ -27,13 +37,16 @@ export default async function Product() {
               height={130}
             />
             <div className="flex justify-around w-full items-center">
-              <p>Likes: {product.attributes.likes}</p>
+              <Likes/>
+              <p>Likes:
+                {product.attributes.likes}
+              </p>
                {product.attributes.destak === true ? 'Destaque' : 'Não destaque'}
             </div>
             <p>Ingrediente: {product.attributes.ingredients}</p>
             <p>Slug: {product.attributes.slug}</p>
             <div className='flex items-center gap-2'>
-              {product.attributes.gallery.data.map((gallery: any) => {
+              {product.attributes.gallery.data?.map((gallery: any) => {
                 return (
                   <Image
                     key={gallery.id}
@@ -62,6 +75,10 @@ export default async function Product() {
           </div>
         )
       })}
+      <pre>
+        {/* {JSON.stringify(products, null, 2)} */}
+      </pre>
     </div>
   )
 }
+
