@@ -11,17 +11,21 @@ export default async function Home() {
     }
   })
   const products = await response.json()
+
+  const res = await fetch('https://reqres.in/api/users')
+  const user = await res.json()
+
   return (
     <div id="home">
       <Hero bg="bg-hero" opacity="bg-black/70">
         <HeroText/>
       </Hero>
-      <Flavor products={products}/>
+      <Flavor products={products} user={user}/>
       <Hero bg="bg-contact" opacity="bg-black/60" >
         <HeroContact/>
       </Hero>
       <pre>
-        {/* {JSON.stringify(products, null, 2)} */}
+        {JSON.stringify(user, null, 2)}
       </pre>
     </div>
   );

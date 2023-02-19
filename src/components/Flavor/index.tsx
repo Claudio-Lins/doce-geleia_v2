@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { FlavorCard } from './FlavorCard'
 
 
-export function Flavor({products}: any ) {
+export function Flavor({products, user}: any ) {
 
 
   return (
@@ -16,12 +16,12 @@ export function Flavor({products}: any ) {
       <h2 className='mb-2 font-Montserrat text-3xl font-bold'>Sabores</h2>
       <hr className='mb-8 w-full' />
       <div className='flex h-auto w-full flex-wrap items-center justify-evenly gap-4 md:h-[80%] md:justify-center md:gap-20'>
-        {products?.data.map((product: ProductProps) => {
+        {user?.data.map((user: any) => {
           return (
             <div 
-              key={product.id}>
-                <Link href={`/product/${product.id}`} >
-                  link
+              key={user.id}>
+                <Link href={`/products/${user.id}`} >
+                {user.first_name}
               {/* <FlavorCard
                 title={product.attributes.title}
                 src={product.attributes.cover.data.attributes.url}
@@ -32,6 +32,7 @@ export function Flavor({products}: any ) {
             </div>
           )
         })}
+        <pre>{JSON.stringify(user, null, 2)}</pre>
       </div>
     </div>
   )

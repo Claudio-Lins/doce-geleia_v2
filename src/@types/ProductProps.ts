@@ -49,6 +49,7 @@ export interface Cover {
 }
 
 export interface ProductProps {
+  slug: any;
   data: any;
   id: number
   attributes: {

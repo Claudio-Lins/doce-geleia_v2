@@ -3,10 +3,10 @@
 import { prisma} from '@/lib/prisma'
 import { ProductProps } from '@/@types/ProductProps';
 
-export async function getProductsById(productSlug: string ) {
+export async function getProductsById(productId: string ) {
   const product = await prisma.product.findUnique({
     where: {
-      slug: productSlug,
+      slug: productId,
     },
     include: {
       ProductDetail: true,
